@@ -1,6 +1,8 @@
 package com.food.userinfo.service;
 
 import com.food.userinfo.dto.UserDTO;
+import com.food.userinfo.entity.User;
+import com.food.userinfo.map.UserMapper;
 import com.food.userinfo.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ public class UserService {
     UserRepo userRepo;
 
     public UserDTO addUser(UserDTO userDTO) {
-
+       User savedUser =  userRepo.save(UserMapper.INSTANCE.mapUserDTOToUser(userDTO));
+       return UserMapper.INSTANCE.mapUserToUserDTO(savedUser);
     }
 }
