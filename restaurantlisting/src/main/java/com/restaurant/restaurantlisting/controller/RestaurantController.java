@@ -22,10 +22,15 @@ public class RestaurantController {
         return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
     }
 
-    @PostMapping("addRestaurant")
+    @PostMapping("/addRestaurant")
     public ResponseEntity<RestaurantDTO> saveRestaurant(@RequestBody RestaurantDTO restaurantDTO) {
         RestaurantDTO restaurantAdded = restaurantService.addRestaurantInDB(restaurantDTO);
         return new ResponseEntity<>(restaurantAdded, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/fetchById/{id}")
+    public ResponseEntity<RestaurantDTO> findRestaurant(@PathVariable Integer id) {
+        return restaurantService.fetchRestaurantById(id);
     }
 
 
