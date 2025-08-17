@@ -15,7 +15,7 @@
 	<groupId>com.food</groupId>
 	<artifactId>userinfo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Userinformation</name>
+	<name>USER-Information-Service</name>
 	<description>Demo project for Spring Boot User Details MS</description>
 
 	<properties>
