@@ -15,7 +15,7 @@ public class FoodItem {
     private int id;
     private String itemName;
     private String itemDescription;
-    private boolean isVegan;
+    private boolean isVeg;
     private Number price;
     private Integer restaurantId;
 
