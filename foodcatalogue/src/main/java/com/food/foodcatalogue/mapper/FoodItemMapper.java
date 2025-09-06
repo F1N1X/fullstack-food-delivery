@@ -10,7 +10,6 @@ import org.mapstruct.factory.Mappers;
 public interface FoodItemMapper {
 
     FoodItemMapper INSTANCE = Mappers.getMapper(FoodItemMapper.class);
-
     FoodItem mapFoodItemDTOToFoodItem(FoodItemDTO foodItemDTO);
     FoodItemDTO mapFoodItemToFoodItemDTO(FoodItem foodItem);
 }

@@ -6,16 +6,17 @@ import com.food.foodcatalogue.entity.FoodItem;
 import com.food.foodcatalogue.mapper.FoodItemMapper;
 import com.food.foodcatalogue.repo.FoodItemRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+@Service
 public class FoodCatalogueService {
 
     @Autowired
-    FoodItemRepo footItemRepo;
+    FoodItemRepo foodItemRepo;
 
     public FoodItemDTO addFoodItem(FoodItemDTO foodItemDTO) {
-        FoodItem foodItemSavedInDB = footItemRepo.save(FoodItemMapper.INSTANCE.mapFoodItemDTOToFoodItem(foodItemDTO));
-        return FoodItemMapper.INSTANCE.mapFoodItemToFoodItemDTO(foodItemSavedInDB);
+        FoodItem entity = FoodItemMapper.INSTANCE.mapFoodItemDTOToFoodItem(foodItemDTO);
+        FoodItem saved = foodItemRepo.save(entity);
+        return FoodItemMapper.INSTANCE.mapFoodItemToFoodItemDTO(saved);
     }
 }
