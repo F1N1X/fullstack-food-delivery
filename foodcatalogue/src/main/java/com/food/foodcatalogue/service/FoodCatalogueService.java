@@ -15,8 +15,7 @@ public class FoodCatalogueService {
     FoodItemRepo foodItemRepo;
 
     public FoodItemDTO addFoodItem(FoodItemDTO foodItemDTO) {
-        FoodItem entity = FoodItemMapper.INSTANCE.mapFoodItemDTOToFoodItem(foodItemDTO);
-        FoodItem saved = foodItemRepo.save(entity);
+        FoodItem saved = foodItemRepo.save(FoodItemMapper.INSTANCE.mapFoodItemDTOToFoodItem(foodItemDTO));
         return FoodItemMapper.INSTANCE.mapFoodItemToFoodItemDTO(saved);
     }
 }
