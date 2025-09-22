@@ -17,6 +17,4 @@ public class OrderMsApplication {
 	@LoadBalanced
 	public RestTemplate getRestTemplate() {return  new RestTemplate();}
 
-
-
 }
